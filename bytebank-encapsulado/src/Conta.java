@@ -7,6 +7,14 @@ public class Conta {
 	private int numero;
 	private Cliente titular;
 	
+	
+	//construtor de Conta :: atributos necesários para a criação da Conta com o new;
+	public Conta(int agencia, int numero) {
+		this.agencia = agencia;
+		this.numero = numero;
+		System.out.println("Agencia: "+agencia+", ContaCorrente: "+numero);
+	}
+	
 	//métodos (o que eu posso fazer com a conta)
 	public void deposita(double valor) /* void não tem resposta */ {
 		//this especifica o atributo do método que está sendo invocado
@@ -41,6 +49,9 @@ public class Conta {
 	}
 	
 	public void setNumero(int novoNumero) {
+		if (novoNumero <= 0 ) {
+			System.out.println("Número inválido, tente novamente.");
+		} 
 		this.numero = novoNumero;
 	}
 	
@@ -49,6 +60,9 @@ public class Conta {
 	}
 	
 	public void setAgencia(int agencia) {
+		if (agencia <= 0 ) {
+			System.out.println("Número inválido, tente novamente.");
+		} 
 		this.agencia = agencia;
 	}
 	
